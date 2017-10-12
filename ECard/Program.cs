@@ -37,8 +37,15 @@ namespace ECard
 
 			var vp = b.authenticateDialog(dialog, "", "1122", reader.id);
 			var tb = vp.ordination[0].taetigkeitsBereich;
+			
+			var gdaMa = new BaseServiceRef.gdaMa
+			{
+			    vorname = "Max",
+			    nachname = "Mustermann",
+			    zusatzinfo = "Zusatzinfo"
+			};
 
-			b.setDialogAddress(dialog, vp.ordination[0].ordinationId, tb[0].id, "700", new gdaMa(), "");
+			b.setDialogAddress(dialog, vp.ordination[0].ordinationId, tb[0].id, "700", gdaMa, "");
 	
 			b.closeDialog(dialog);
 		}
